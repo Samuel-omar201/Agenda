@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>contacto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <img src="http://contraloriadelmagdalena.gov.co/contratacion/imagenes/botones/usuario.png" alt="User_img">
+                <br>
+                <br>
+                <br>
+                <ion-item>
+                    <ion-input required type="text" placeholder="primer_nombre" [(ngModel)]="primer_nombre"></ion-input>
+                </ion-item>
+                <br>
+                <ion-item>
+                    <ion-input required type="text" placeholder="segundo_nombre" [(ngModel)]="segundo_nombre"></ion-input>
+                </ion-item>
+                <br>
+                <ion-item>
+                    <ion-input required type="text" placeholder="primer_apellido" [(ngModel)]="primer_apellido"></ion-input>
+                </ion-item>
+                <br>
+                <ion-item>
+                    <ion-input required type="text" placeholder="segundo_apellido" [(ngModel)]="segundo_apellido"></ion-input>
+                </ion-item>
+                <br>
+                <ion-item>
+                    <ion-input required type="text" placeholder="fecha_nacimiento" [(ngModel)]="fecha_nacimiento"></ion-input>
+                </ion-item>
+                <br>
+                <ion-item>
+                    <ion-input required type="email" placeholder="correo" [(ngModel)]="correo"></ion-input>
+                </ion-item>
+                <br>
+                <ion-item>
+                    <ion-input required type="text" placeholder="direccion" [(ngModel)]="direccion"></ion-input>
+                </ion-item>
+                <br>
+                <ion-item>
+                    <ion-input required type="number" placeholder="celular" [(ngModel)]="celular"></ion-input>
+                </ion-item>
+                <br>
+                <ion-item>
+                    <ion-input required type="number" placeholder="casa" [(ngModel)]="casa"></ion-input>
+                </ion-item>
+                <br>
+                <ion-item>
+                    <ion-input required type="number" placeholder="otros" [(ngModel)]="otros"></ion-input>
+                </ion-item>
+    
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+<ion-button expand="full" (click)="saveUser()">Crear</ion-button>
+</ion-content>

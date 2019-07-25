@@ -1,0 +1,60 @@
+<ion-menu contentId="content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>
+        Bienvenido : {{ nickname }}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+      <ion-button expand="full" (click)="creatcontact()">Añadir Contacto</ion-button>
+    <div *ngFor="let p of pages">
+      <ion-menu-toggle *ngIf="p.url">
+        <ion-item [routerLink]="p.url" routerDirection="root" routerLinkActive="active">
+          <ion-icon [name]="p.icon" slot="start"></ion-icon>
+          <ion-label>
+            {{p.title}}
+          </ion-label>
+        </ion-item>
+        </ion-menu-toggle>
+
+        <ion-item button *ngIf="p.children?.length > 0" (click)="p.open = !p.open" [class.active-parent]="p.open" detail="false">
+          <ion-icon slot="start" name="arrow-forward" *ngIf="!p.open"></ion-icon>
+          <ion-icon slot="start" name="arrow-down" *ngIf="p.open"></ion-icon>
+          <ion-label>{{p.title}}</ion-label>
+        </ion-item>
+
+        <ion-list *ngIf="p.open">
+          <ion-menu-toggle>
+            <ion-item *ngFor="let sub of p.children" [routerLink]="sub.url" routerDirection="root" routerLinkActive="active">
+              <ion-icon slot="start" [name]="sub.icon"></ion-icon>
+              <ion-label>
+                {{sub.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle> 
+        </ion-list>
+       
+
+
+
+        
+
+          
+      
+    </div>
+    <div (click)="logOut()" >
+      <ion-item   routerDirection="root" routerLinkActive="active">
+        <ion-icon slot="start" name="log-out"></ion-icon>
+        <ion-label>
+          Salir
+        </ion-label>
+      </ion-item>
+    </div>
+  </ion-content>          
+</ion-menu>
+
+
+
+<ion-router-outlet id="content"></ion-router-outlet>
