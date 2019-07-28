@@ -46,4 +46,8 @@ export class LoginPage implements OnInit {
 
   }
 
+  CU(){
+    this.nav.navigateForward('/login')
+  }
+
 }

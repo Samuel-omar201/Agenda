@@ -41,7 +41,7 @@ export class UsuarioService {
     this.router.navigate(['/login'])
   }
 
-  isLogued() : Boolean{
+  isLogued() : boolean {
     let data = localStorage.getItem('_id')
     if( data != null ){
       console.log('si esta logueado')
@@ -59,6 +59,10 @@ export class UsuarioService {
 
   addMyContact( user : any  ) : Observable<any> {
     return this.http.post(`${this.endpoint}newContact`, user )
+  }
+
+  newuser( user : any  ) : Observable<any> {
+    return this.http.post(`${this.endpoint}newuser`, user )
   }
 
 
